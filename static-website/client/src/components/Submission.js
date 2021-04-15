@@ -8,8 +8,7 @@ import axios from "axios"
 import emailjs from "emailjs-com"
 
 export default function Submission(props){
-
-  
+ 
     function sendEmail(e) {
         e.preventDefault();
         
@@ -19,7 +18,10 @@ export default function Submission(props){
           }, (error) => {
               console.log(error.text);
           });
+
+          document.getElementById("contactForm").reset();
       }
+
     return(
         <div class="container has-text-centered " >
             <div class="hero is-dark">
