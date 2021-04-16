@@ -23,9 +23,9 @@ export default function Submission(props){
       }
 
     return(
-        <div class="container has-text-centered " >
-            <div class="hero is-dark">
-            <p>Please provide feedback or if you would like me to reach out please provide a phone number with your availabe time and your contact email. Thank you!</p>
+        <div class="column is-two-fifths " style={{display:"flex-box", background:"#2a4574 "}} >
+            <div class="is-justify-content is-centered">
+            <h3 style={{fontSize:"200%", color:"white", fontWeight:"bolder"}}>Contact Form</h3>
             <form className="contactForm" id="contactForm" onSubmit={sendEmail}>
                 <input  type="hidden" name="contact_number"/>
                 <input type="text" class="input" placeholder="Name" required="true" name="name"  />
@@ -35,8 +35,8 @@ export default function Submission(props){
                 <input type="email" class="input" placeholder="Contact Email" name="email"   />
                 <Icon align="left" class="fas fa-email"/>
                 <br/>
-                <p>Feedback Section</p>
-                <textarea class="textarea" name="message"   ></textarea>
+                <p style={{opacity:"0%"}}>fsalknfnflkasnflaksnfla</p>
+                <textarea class="textarea" name="message"  placeholder="Start typing..." ></textarea>
                 <br/>
                 <Button color="success" value="Send">Send</Button>
             </form>
