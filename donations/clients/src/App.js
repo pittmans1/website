@@ -47,6 +47,7 @@ const handleAddToCartClick = id => {
            name={product.name}
            desc={product.desc}
            price={product.price}
+           img={product.img}
            onAddToCartClick={()=> handleAddToCartClick(product.id)}
            />
         ))}
