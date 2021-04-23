@@ -14,6 +14,7 @@ import "./styles.css";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
+const promise = loadStripe("pk_test_51Ii486HxoL2opcCfdWK7D7yYKt1v9GRtGSwPXPn5UoAbV1l26CLzZ0HaN9aZBIx5Vsw8BfGfMQ0sRqCz0ckWdmHO00QmpwselZ")
 // loadStripe is initialized with your real test publishable API key.
 export default function App() {
 const [itemsInCart, setItemsInCart]= useState([])
@@ -37,7 +38,6 @@ const handleAddToCartClick = id => {
     (acc, product) => acc + product.price * product.quantity,
     0
   )
-  const promise = loadStripe("pk_test_51Ii486HxoL2opcCfdWK7D7yYKt1v9GRtGSwPXPn5UoAbV1l26CLzZ0HaN9aZBIx5Vsw8BfGfMQ0sRqCz0ckWdmHO00QmpwselZ")
   return (
    <main>
      <div>
