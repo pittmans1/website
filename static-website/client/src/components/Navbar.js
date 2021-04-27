@@ -1,6 +1,6 @@
 import React from "react"
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import App from "../Donations/src/Dapp"
+import Dapp from "../Donations/src/Dapp"
 import {Link} from "react-router-dom"
 
 export default function Navbar(){

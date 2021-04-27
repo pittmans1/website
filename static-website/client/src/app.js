@@ -13,16 +13,7 @@ import Home from "./components/Home"
 export default function  App(props){
   
     return(
-        <div style={{backgroundImage:`url(${galaxy})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize:'cover',
-        backgroundPosition: 'right ',
-        width:"100%",
-        height:"100%",
-        textAlign:'center',
-        margin:'auto',
-        padding:'0', 
-         fontFamily:"Roboto, sans-serif"}}>
+        <div >
 <Navbar/>
            <Switch>
                <Route exact path="/" component={Home}/>

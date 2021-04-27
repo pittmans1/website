@@ -8,7 +8,7 @@ import {
 import './CheckoutForm.css';
 import { stringify } from 'uuid';
 import { token } from 'morgan';
-function CheckoutForm(  totalCost ) {
+function CheckoutForm(  {totalCost} ) {
     const [succeeded, setSucceeded] = useState(false);
     const [error, setError] = useState(null);
     const [processing, setProcessing] = useState('');
@@ -55,7 +55,7 @@ function CheckoutForm(  totalCost ) {
                   "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    amount:totalCost,
+                    amount: totalCost,
                     currency:""
                     
                 })
