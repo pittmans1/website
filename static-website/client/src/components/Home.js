@@ -19,6 +19,11 @@ export default function Home(){
             <About/>
             <Submission/>
             <Footer/>
+            <div class="MagicScroll" data-options="mode: carousel; height:275px; width: auto">
+    <a><img src="../images/donation" /></a>
+    <a><img src=""/></a>
+    ...
+    </div>
         </div>
     )
 }

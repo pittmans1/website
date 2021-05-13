@@ -19,7 +19,7 @@ export default function  App(props){
                <Route exact path="/" component={Home}/>
                <Route path="/checkout" component={Dapp}/>
            </Switch>
-            
+     
         </div>
     )
 }
