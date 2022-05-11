@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const DiscordStrategy = require('passport-discord').Strategy
 require('dotenv').config();
 
 passport.serializeUser(function(user,done){
@@ -24,3 +25,17 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
+
+var scopes = ['identify', 'email', ];
+
+passport.use(new DiscordStrategy({
+    clientID: process.env.DISCORD_CLIENT,
+    clientSecret: process.env.DISCORD_SECRET,
+    callbackURL: 'http://localhost:3000/discord/callback',
+    scope: scopes
+},
+function(accessToken, refreshToken, profile, dones) {
+    User.findOrCreate({ discordId: profile.id }, function(err, user) {
+        return dones(err, user);
+    });
+}));

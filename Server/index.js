@@ -4,8 +4,7 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     passport = require('passport'),
     cookieSession = require('cookie-session');
-const passport = require('passport');
-const api = require('../Server/Routes/user.routes')
+
 require('./passport-setup');
 // MongoDB Configuration
 mongoose
@@ -23,8 +22,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 app.use('/', express.static('client'));
-app.use('/api', api)
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
     console.log('Connected to port ' + port)
 }) 
@@ -57,7 +56,7 @@ app.use(passport.session())
 
 app.get('/failed', (req, res) => res.send('You Failed Google oAuth!'))
 
-app.get('/pass', isLoggedIn, (req, res) => res.send('Welcome ${req.user.email}'))
+app.get('/pass', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.displayName}`))
 app.get('/google', passport.authenticate('google', { scope: ['profile', 'email','openId','id'] }));
 
 app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
@@ -72,5 +71,11 @@ app.get('/logout', (req, res)=> {
   res.redirect('/Home')
 })
 
-app.get('/home', (req, res) => res.send('yes'))
+app.get('/home',isLoggedIn, (req, res) => res.send('yes'))
+
+app.get('/discord', passport.authenticate('discord'));
+app.get('discord/callback', passport.authenticate('discord', {failureRedirect: '/failed'
+}), function(req, res) {
+    res.redirect('/') // Successful auth
+});
 app.listen(3000, ()=> console.log('listening on port 3000'))
