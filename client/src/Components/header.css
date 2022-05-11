@@ -44,6 +44,7 @@
      display: flex;
      color:#a1a5b0;
      cursor:pointer;
+    
  }
  
  .headerItems > p{
@@ -105,5 +106,19 @@
      display: flex;
      font-family: Georgia, 'Times New Roman', Times, serif;
      justify-content:center;
+ }
+
+ .newProjects{
+     display:flex;
+     color:white;
+     justify-content: center;
+     align-items:center;
+ }
+
+ .file{
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     color:white;
  }
 

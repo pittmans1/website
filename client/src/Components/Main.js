@@ -13,10 +13,13 @@ const Main = () => {
             <div>
                 <h4 class='Titles'>Peace</h4>
             </div>
-            <div>
+            <div class='newProjects'>
                 <h4>
                     If you would like to share your art with this page please import below!
                 </h4>
+            </div>
+            <div class='file'>
+                <input type='file' />
             </div>
       </div>
   )

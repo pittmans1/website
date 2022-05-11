@@ -20,10 +20,10 @@ const Header = () => {
     </div>
 
     <div className='headerItems'>
-        <p>Create</p>
-        <p>Bio</p>
-        <p>Project Ideas</p>
-        <p>Completed Projects</p>
+        <p><a style={{'textDecoration':'none', 'color':'#a1a5b0'}} href='/create'>Create</a></p>
+        <p><a style={{'textDecoration':'none', 'color':'#a1a5b0'}} href='/bio'>Bio </a></p>
+        <p><a style={{'textDecoration':'none', 'color':'#a1a5b0'}} href='/project'>Project Ideas</a></p>
+        <p><a style={{'textDecoration':'none', 'color':'#a1a5b0'}} href='/projects'>Completed Projects</a></p>
     </div>
     <div className='headerActions'>
         <div className='themeSwitchContainer'>
