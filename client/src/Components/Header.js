@@ -31,7 +31,7 @@ const Header = () => {
         </div>
     </div>
     <div className='LoginContainer'>
-        Log In 
+        <a style={{'textDecoration':'none', 'color':'#a1a5b0'}} href='/login'>Log In </a>
     </div>
 </div>
   )

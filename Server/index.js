@@ -8,7 +8,7 @@ let express = require('express'),
 require('./passport-setup');
 // MongoDB Configuration
 mongoose
-  .connect('mongodb://127.0.0.1:27017/WebsInterface')
+  .connect('mongodb://127.0.0.1:27017/Spitty')
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 app.use('/', express.static('client'));
+app.use('/login', express.render('LoginPage'))
 
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
@@ -70,6 +71,8 @@ app.get('/logout', (req, res)=> {
   req.logout()
   res.redirect('/Home')
 })
+
+app.get('/login')
 
 app.get('/home',isLoggedIn, (req, res) => res.send('yes'))
 
